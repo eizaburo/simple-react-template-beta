@@ -91,3 +91,10 @@ button{
         padding: 10px 20px;
     }
 }
+
+/* React */
+
+.form-error{
+    color: red;
+    font-size: small;
+}
