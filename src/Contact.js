@@ -7,7 +7,8 @@ function Contact() {
 
     const onSubmit = (data) => {
         // alert(JSON.stringify(data));
-        const base_url = "https://script.google.com/macros/s/AKfycbytXB0FlXLKnEq49qVSmfMl9xfZ7gZpkZkn3J8gmJ5LriLjyLA77NNIm47e5y7qU4g3yA/exec";
+        // const base_url = "https://script.google.com/macros/s/AKfycbytXB0FlXLKnEq49qVSmfMl9xfZ7gZpkZkn3J8gmJ5LriLjyLA77NNIm47e5y7qU4g3yA/exec";
+        const base_url = process.env.REACT_APP_API_URL;
 
         fetch(base_url, {
             method: "POST",
