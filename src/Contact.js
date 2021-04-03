@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 function Contact() {
 
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
         // alert(JSON.stringify(data));
@@ -38,12 +38,12 @@ function Contact() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-item">
                     <label htmlFor="email">Email</label>
-                    <input id="email" type="text" name="email" ref={register({ required: true })} />
+                    <input id="email" type="text" name="email" {...register("email", { required: true })} />
                     {errors.email && <span className="form-error">Emailは必須です。</span>}
                 </div>
                 <div className="form-item">
                     <label htmlFor="content">お問合せ内容</label>
-                    <textarea id="content" rows="3" name="content" ref={register({ required: true })}></textarea>
+                    <textarea id="content" rows="3" name="content" {...register("content", { required: true })}></textarea>
                     {errors.content && <span className="form-error">お問合せ内容は必須です。</span>}
                 </div>
                 <div className="form-item">
