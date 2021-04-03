@@ -38,12 +38,12 @@ function Contact() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-item">
                     <label htmlFor="email">Email</label>
-                    <input id="email" type="text" name="email" {...register("email", { required: true })} />
+                    <input id="email" type="text" {...register("email", { required: true })} />
                     {errors.email && <span className="form-error">Emailは必須です。</span>}
                 </div>
                 <div className="form-item">
                     <label htmlFor="content">お問合せ内容</label>
-                    <textarea id="content" rows="3" name="content" {...register("content", { required: true })}></textarea>
+                    <textarea id="content" rows="3" {...register("content", { required: true })}></textarea>
                     {errors.content && <span className="form-error">お問合せ内容は必須です。</span>}
                 </div>
                 <div className="form-item">
